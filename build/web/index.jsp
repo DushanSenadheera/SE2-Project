@@ -1,22 +1,21 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>ABC Cinema | Home</title>
     </head>
     <body>
         <header>
-            <nsv>
-                
-            </nsv>
+            <nav>
+<!--                navigation bar here-->
+            </nav>
         </header>
-    <main>
-        
-    </main>
+        <main>
+<!--            main content here-->
+        </main>
         <footer>
-            
+<!--            footer here-->
         </footer>
     </body>
 </html>
