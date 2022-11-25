@@ -4,6 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ABC Cinema | Home</title>
+        <link rel="stylesheet" href="styles/index.css">
     </head>
     <body>
         <header>
@@ -17,5 +18,6 @@
         <footer>
 <!--            footer here-->
         </footer>
+         <script src="scripts/script.js"></script> 
     </body>
 </html>
