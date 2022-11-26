@@ -7,17 +7,11 @@
         <link rel="stylesheet" href="styles/index.css">
     </head>
     <body>
-        <header>
-            <nav>
-<!--                navigation bar here-->
-            </nav>
-        </header>
+        <jsp:include page="components/navbar.jsp" />
         <main>
-<!--            main content here-->
+            <h1>Hello World!</h1>
         </main>
-        <footer>
-<!--            footer here-->
-        </footer>
+        <jsp:include page="components/footer.jsp" />
          <script src="scripts/script.js"></script> 
     </body>
 </html>
