@@ -1,3 +1,7 @@
+#mobile-menu{
+    display: none;
+}
+
 header{
     background-color: #161616;
 }
@@ -27,6 +31,58 @@ nav ul li a{
     cursor: pointer;
 }
 
+#sign-up-btn-nav{
+    display: none;
+}
+
 .logo a{
     color: #D80000;
+}
+
+
+@media screen and (max-width: 600px){
+
+    nav img{
+        width: 32px;
+        height: auto;
+    }
+
+    #mobile-menu{
+        display: block;
+        cursor: pointer;
+    }
+
+    .mobile-nav-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav{
+        flex-direction: column;
+    }
+
+    nav ul{
+        display: none;
+    }
+
+    .active-nav{
+        display: block;
+    }
+
+    #sign-up-btn{
+        display: none;
+    }
+
+    #sign-up-btn-nav{
+        display: block;
+    }
+
+    nav ul li{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 6px;
+    }
 }
