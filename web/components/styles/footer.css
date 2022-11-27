@@ -7,7 +7,7 @@ footer{
 .footer-top{
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .footer-bottom small{
@@ -30,4 +30,19 @@ footer ul li a{
 
 footer h4{
     color: #D80000;
+}
+
+
+@media screen and (max-width: 600px){
+
+    .footer-top{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-top div{
+        margin: 16px;
+    }
+
 }
