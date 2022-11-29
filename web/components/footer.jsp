@@ -37,9 +37,9 @@
                     <h4>Get In Touch</h4>
                     <br>
                     <ul>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
                     </ul>
                 </div>
             </div>

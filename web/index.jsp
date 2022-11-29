@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ABC Cinema | Home</title>
+        <script src="https://kit.fontawesome.com/56016c02ef.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles/index.css">
     </head>
     <body>
