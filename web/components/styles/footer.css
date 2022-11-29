@@ -7,7 +7,23 @@ footer{
 .footer-top{
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
+}
+
+.footer-contact ul li a i{
+    width: 36px;
+    height: auto;
+    color: #fff;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.footer-contact ul li a i:hover{
+    color: #D80000;
+}
+
+.footer-contact ul{
+    display: flex;
 }
 
 .footer-bottom small{
