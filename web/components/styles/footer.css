@@ -20,8 +20,9 @@ hr{
     border: 1px solid rgba(255, 255, 255, 0.123);
 }
 
-.footer-logo h1 a{
-    color: #D80000;
+.footer-logo img{
+    width: 128px;
+    height: auto;
 }
 
 footer ul li a{
