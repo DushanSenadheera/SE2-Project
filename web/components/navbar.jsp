@@ -11,7 +11,7 @@
         <header>
             <nav>
                 <div class="mobile-nav-header">
-                    <h3 class="logo"><a href="#">LOGO</a></h3>
+                    <img src="assets/logo header.png" alt="header logo" class="logo" />
                     <img src="assets/menu.png" alt="mobile menu" id="mobile-menu">
                 </div>
                 <ul id="nav-links">

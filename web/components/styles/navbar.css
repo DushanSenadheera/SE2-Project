@@ -22,6 +22,10 @@ nav ul li a{
     color: #fff;
 }
 
+nav ul li a:hover{
+    text-decoration: underline #D80000;
+}
+
 .sign-up-btn{
     background-color: #D80000;
     color: #fff;
@@ -29,14 +33,16 @@ nav ul li a{
     border-radius: 4px;
     border: 2px solid #D80000;
     cursor: pointer;
+    font-weight: 600;
 }
 
 #sign-up-btn-nav{
     display: none;
 }
 
-.logo a{
-    color: #D80000;
+.logo{
+    width: 62px;
+    height: auto;
 }
 
 

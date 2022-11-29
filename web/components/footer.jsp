@@ -11,7 +11,7 @@
         <footer>
             <div class="footer-top">
                 <div class="footer-logo">
-                    <h1><a href="">LOGO</a></h1>
+                    <img src="assets/logo footer.png" alt="logo footer" />
                 </div>
                 <div class="footer-nav">
                     <h4>Navigation</h4>
