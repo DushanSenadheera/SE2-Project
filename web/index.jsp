@@ -11,8 +11,21 @@
     <body>
         <jsp:include page="components/navbar.jsp" />
         <main>
-            <div>
-                <h1>Hello World!</h1>
+            <div class="landing">
+                <div class="landing-content"></div>
+                <div class="landing-text">
+                    <h1>Feel the <span>Next</span> <br>
+                        level <span>Movie</span> Experience
+                    </h1>
+                    <a href="#"><button class="explore-btn">Explore</button></a>
+                    <a href="#"><button class="buy-ticket-btn">Buy Tickets</button></a>
+                    <form action="" method="get" name="search-bar">
+                        <input type="search" name="search" id="search" placeholder="Search..." class="search-bar">
+                    </form>
+                </div>
+                <div class="landing-vid">
+                    <video src="assets/bgvid.mp4" autoplay muted loop></video>
+                </div>
             </div>
         </main>
         <jsp:include page="components/footer.jsp" />
