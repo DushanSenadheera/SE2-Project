@@ -17,6 +17,14 @@ main{
     background-color: #161616;
 }
 
+main h3,h5{
+    color: #D80000;
+}
+
+main h4,p{
+    color: #fff;
+}
+
 .landing-content{
     width: 80%;
     height: 100vh;
@@ -80,6 +88,189 @@ main{
 
 .search-bar{
     margin-top: 30px;
+}
+
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img{
+    width: 100%;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.dots{
+    text-align: center;
+}
+
+.mySlides fade img{
+    width: 100%;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.premiering-movies{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.premiering{
+    margin: 0 5%;
+}
+
+.cooming-soon{
+    margin: 0 5%;
+}
+
+section{
+    display: flex;
+}
+
+.about-img{
+    width: 100%;
+}
+
+.about-us{
+    margin: 0 5%;
+}
+
+.about-content{
+    padding: 12px;
+}
+
+.contact-us{
+    margin: 0 5%;
+}
+
+.contact-us-content{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-info{
+    width: 40%; 
+}
+
+.contact-info ul{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.contact-form{
+    width: 70%;
+}
+
+.contact-form-inputs input{
+    width: 80%;
+    padding: 10px;
+    margin: 12px;
+    background: rgba(48, 48, 48, 0.65);
+    border: none;
+    color: #fff;
+}
+
+textarea{
+    margin: 12px;
+    resize: none;
+    background: rgba(48, 48, 48, 0.65);
+    border: none;
+    color: #fff;
+}
+
+.contact-form-inputs section{
+    width: 85%;
+    justify-content: space-between;
+}
+
+.contact-info i, ul li{
+    color: #fff;
+    font-size: 16px;
+}
+
+#msg-submit-btn{
+    background-color: #D80000;
+    color: #fff;
+    border-radius: 4px;
+    border: 2px solid #D80000;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 
