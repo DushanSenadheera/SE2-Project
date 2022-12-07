@@ -4,6 +4,9 @@
 
 header{
     background-color: #161616;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
 }
 
 nav{
@@ -11,6 +14,7 @@ nav{
     justify-content: space-around;
     align-items: center;
     padding: 12px;
+    position: static;
 }
 
 nav ul li{
