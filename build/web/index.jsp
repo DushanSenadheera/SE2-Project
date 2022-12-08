@@ -122,19 +122,22 @@
             <br>
             <div class="about-us">
                 <h3>Get To Know</h3>
+                <br>
                 <section>
                     <div class="about-img">
                         <img src="assets/about1.png" alt="">
                     </div>
                     <div class="about-content">
                         <h5>Title</h5>
+                        <br>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi accusantium delectus expedita. Optio praesentium ipsam suscipit cum quod perspiciatis corrupti.</p>
                     </div>
                 </section>
                 <br>
-                <section>
+                <section id="about-us-reverse">
                     <div class="about-content">
                         <h5>Title</h5>
+                        <br>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi accusantium delectus expedita. Optio praesentium ipsam suscipit cum quod perspiciatis corrupti.</p>
                     </div>
                     <div class="about-img">
@@ -148,6 +151,7 @@
                     </div>
                     <div class="about-content">
                         <h5>Title</h5>
+                        <br>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi accusantium delectus expedita. Optio praesentium ipsam suscipit cum quod perspiciatis corrupti.</p>
                     </div>
                 </section>
@@ -171,7 +175,7 @@
                             </section>
                             <input type="email" placeholder="Email">
                             <br>
-                            <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                            <textarea name="message" id="message" rows="12" cols="85" placeholder="Message"></textarea>
                             <br>
                             <input type="button" value="Submit" id="msg-submit-btn">
                         </form>
