@@ -11,14 +11,14 @@
         <header>
             <nav>
                 <div class="mobile-nav-header">
-                    <img src="assets/logo header.png" alt="header logo" class="logo" />
+                    <a href="#home"><img src="assets/logo header.png" alt="header logo" class="logo"/></a>
                     <img src="assets/menu.png" alt="mobile menu" id="mobile-menu">
                 </div>
                 <ul id="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Explore</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#explore">Explore</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <li><button class="sign-up-btn" id="sign-up-btn-nav">Sign Up</button></li>
                 </ul>
                 <a href="#"><button class="sign-up-btn" id="sign-up-btn">Sign Up</button></a>

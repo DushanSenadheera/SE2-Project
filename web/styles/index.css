@@ -7,6 +7,7 @@
     list-style: none;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
 }
 
 .landing{
@@ -236,6 +237,15 @@ section{
     width: 40%; 
 }
 
+.contact-info ul li{
+    margin: 18px;
+    align-items: center;
+}
+
+.contact-info span{
+    margin-left: 8px;
+}
+
 .contact-form{
     width: 70%;
 }
@@ -250,6 +260,7 @@ section{
 }
 
 textarea{
+    width: 80%;
     margin: 12px;
     resize: none;
     background: rgba(48, 48, 48, 0.65);
@@ -258,7 +269,11 @@ textarea{
 }
 
 .contact-form-inputs section{
-    width: 85%;
+    width: 100%;
+}
+
+.contact-form-inputs section input{
+    width: 35%;
     justify-content: space-between;
 }
 

@@ -11,14 +11,14 @@
     <body>
         <jsp:include page="components/navbar.jsp" />
         <main>
-            <div class="landing">
+            <div class="landing" id="home">
                 <div class="landing-content"></div>
                 <div class="landing-text">
                     <h1>Feel the <span>Next</span> <br>
                         level <span>Movie</span> Experience
                     </h1>
-                    <a href="#"><button class="explore-btn">Explore</button></a>
-                    <a href="#"><button class="buy-ticket-btn">Buy Tickets</button></a>
+                    <a href="#explore"><button class="explore-btn">Explore</button></a>
+                    <a href="#explore"><button class="buy-ticket-btn">Buy Tickets</button></a>
                     <form action="" method="get" name="search-bar">
                         <input type="search" name="search" id="search" placeholder="Search..." class="search-bar">
                     </form>
@@ -48,7 +48,7 @@
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
             <br>
-            <div class="premiering">
+            <div class="premiering" id="explore">
                 <h3>Premiere Now</h3>
                 <div class="premiering-movies">
                     <div class="movie">
@@ -57,12 +57,12 @@
                         <p>Movie Description</p>
                     </div>
                     <div class="movie">
-                        <img src="assets/Poster.png" alt="">
+                        <img src="assets/bp.jpg" alt="">
                         <h4>Movie Name</h4>
                         <p>Movie Description</p>
                     </div>
                     <div class="movie">
-                        <img src="assets/Poster.png" alt="">
+                        <img src="assets/tg.jpg" alt="">
                         <h4>Movie Name</h4>
                         <p>Movie Description</p>
                     </div>
@@ -78,22 +78,22 @@
                 <h3>Cooming Soon</h3>
                 <div class="premiering-movies">
                     <div class="movie">
-                        <img src="assets/Poster.png" alt="">
+                        <img src="assets/jw.jpg" alt="">
                         <h4>Movie Name</h4>
                         <p>Movie Description</p>
                     </div>
                     <div class="movie">
-                        <img src="assets/Poster.png" alt="">
+                        <img src="assets/transformers.jpg" alt="">
                         <h4>Movie Name</h4>
                         <p>Movie Description</p>
                     </div>
                     <div class="movie">
-                        <img src="assets/Poster.png" alt="">
+                        <img src="assets/avatar.jpg" alt="">
                         <h4>Movie Name</h4>
                         <p>Movie Description</p>
                     </div>
                     <div class="movie">
-                        <img src="assets/Poster.png" alt="">
+                        <img src="assets/fx.webp" alt="">
                         <h4>Movie Name</h4>
                         <p>Movie Description</p>
                     </div>
@@ -102,13 +102,13 @@
             <br>
             <div class="slideshow-container">
                 <div class="mySlides fade">
-                    <img src="assets/movie-banner.png" style="width:100%">
+                    <img src="assets/movie-banner.png">
                 </div>
                 <div class="mySlides fade">
-                    <img src="assets/movie-banner.png" style="width:100%">
+                    <img src="assets/movie-banner.png">
                 </div>
                 <div class="mySlides fade">
-                    <img src="assets/movie-banner.png" style="width:100%">
+                    <img src="assets/movie-banner.png">
                 </div>
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -120,7 +120,7 @@
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
             <br>
-            <div class="about-us">
+            <div class="about-us" id="about">
                 <h3>Get To Know</h3>
                 <br>
                 <section>
@@ -157,14 +157,14 @@
                 </section>
             </div>
             <br>
-            <div class="contact-us">
+            <div class="contact-us" id="contact">
                 <h3>Get In Touch</h3>
                 <div class="contact-us-content">
                     <div class="contact-info">
                         <ul>
-                            <li><i class="fas fa-phone-alt"></i>011 412 1234, 076 212 1234</li>
-                            <li><i class="fas fa-envelope"></i>abccinema@mail.com</li>
-                            <li><i class="fas fa-map-marker-alt"></i>No. 12/3, street Road, City</li>
+                            <li><i class="fas fa-phone-alt"></i><span>011 412 1234, 076 212 1234</span></li>
+                            <li><i class="fas fa-envelope"></i><span>abccinema@mail.com</span></li>
+                            <li><i class="fas fa-map-marker-alt"></i><span>No. 12/3, street Road, City</span></li>
                         </ul>
                     </div>
                     <div class="contact-form">
