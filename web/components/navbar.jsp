@@ -24,6 +24,5 @@
                 <a href="#"><button class="sign-up-btn" id="sign-up-btn">Sign Up</button></a>
             </nav>
         </header>
-        
     </body>
 </html>

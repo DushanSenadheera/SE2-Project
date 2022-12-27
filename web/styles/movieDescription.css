@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.background-poster{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/baposter.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.movie-description{
+    color: white;
+    position: absolute;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.movie-description .title, .catergories, .duration, .cast{
+    margin: 20px 10% 0;
+}
+
+.movie-description .movie-details{
+    margin: 62px 10% 0;
+}
+
+.cta-btns{
+    margin: 12px 10% 0;
+}
+
+.btn-buy{
+    background-color: #D80000;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 2px solid #D80000;
+    cursor: pointer;
+}
+
+.btn-trailer{
+    background-color: transparent;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 2px solid white;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+.movie-description h1{
+    font-size: 72px;
+    font-weight: 700;
+}
+
+.movie-description h4{
+    font-size: 18px;
+}
+
+.catergories, .cast{
+    width: 40%;
+}
+
+.catergories p{
+    font-size: 14px;
+}
+
+.cast p{
+    font-size: 14px;
+}
+
+.duration p{
+    font-size: 14px;
+}
+
+.movie-details{
+    width: 65%;
+}
+
+.movie-details p{
+    font-size: 18px;
+}
+
+
