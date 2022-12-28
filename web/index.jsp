@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="styles/index.css">
     </head>
     <body>
-        <jsp:include page="components/navbar.jsp" />
+        <jsp:include page="components/navbarLanding.jsp" />
         <main>
             <div class="landing" id="home">
                 <div class="landing-content"></div>
@@ -28,21 +28,43 @@
                 </div>
             </div>
             <br>
+            <!--            <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <img src="assets/theater-banner.png">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="assets/theater-banner.png">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="assets/theater-banner.png">
+                            </div>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <br>
+                        <div class="dots">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>-->
             <div class="slideshow-container">
-                <div class="mySlides fade">
-                    <img src="assets/theater-banner.png">
+                <div class="mySlides1">
+                    <img src="assets/theater-banner.png" style="width:100%">
                 </div>
-                <div class="mySlides fade">
-                    <img src="assets/theater-banner.png">
+
+                <div class="mySlides1">
+                    <img src="assets/theater-banner.png" style="width:100%">
                 </div>
-                <div class="mySlides fade">
-                    <img src="assets/theater-banner.png">
+
+                <div class="mySlides1">
+                    <img src="assets/theater-banner.png" style="width:100%">
                 </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
             </div>
             <br>
-            <div class="dots">
+            <div style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
@@ -102,18 +124,39 @@
                 </div>
             </div>
             <br>
+            <!--            <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <img src="assets/movie-banner.png">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="assets/movie-banner.png">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="assets/movie-banner.png">
+                            </div>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <br>
+                        <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>-->
             <div class="slideshow-container">
-                <div class="mySlides fade">
-                    <img src="assets/movie-banner.png">
+                <div class="mySlides2">
+                    <img src="assets/movie-banner.png" style="width:100%">
                 </div>
-                <div class="mySlides fade">
-                    <img src="assets/movie-banner.png">
+
+                <div class="mySlides2">
+                    <img src="assets/movie-banner.png" style="width:100%">
                 </div>
-                <div class="mySlides fade">
-                    <img src="assets/movie-banner.png">
+
+                <div class="mySlides2">
+                    <img src="assets/movie-banner.png" style="width:100%">
                 </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
             </div>
             <br>
             <div style="text-align:center">
@@ -187,6 +230,7 @@
             <br>
         </main>
         <jsp:include page="components/footer.jsp" />
-        <script src="scripts/script.js"></script> 
+        <script src="scripts/navbarToggler.js"></script> 
+        <script src="scripts/bannerSlider.js"></script> 
     </body>
 </html>
