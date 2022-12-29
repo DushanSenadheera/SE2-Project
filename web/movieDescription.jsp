@@ -18,6 +18,7 @@
                     <p> <span>action</span> <span>adventure</span> <span>sci-fi</span> <span>fantasy</span> <span>comedy</span> <span>romantic</span> <span>supernatural</span> <span>horror</span> <span>thriller</span> <span>drama</span> <span>crime</span> <span>mystry</span></p>
                 </div>
                 <div class="duration">
+                    <i class="far fa-clock"></i> 
                     <p>2h 30min</p>
                 </div>
                 <div class="cast">
@@ -30,8 +31,17 @@
                     </p>
                 </div>
                 <div class="cta-btns">
-                    <button class="btn-buy">Buy Ticket</button>
-                    <button class="btn-trailer">Watch Trailer</button>
+                    
+                    <div id="overlay" onclick="off()">
+                        <iframe width="420" height="315" id="trailer"
+                                src="https://www.youtube.com/watch?v=mkomfZHG5q4">
+                        </iframe>
+                    </div>
+
+                    <div style="padding:20px">
+                        <button class="btn-buy">Buy Ticket</button>
+                        <button class="btn-trailer" onclick="on()">Watch Trailer</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -63,6 +73,8 @@
             </div>
         </div>
         <jsp:include page="components/footer.jsp" />
+        <script src="https://kit.fontawesome.com/56016c02ef.js" crossorigin="anonymous"></script>
         <script src="scripts/navbarToggler.js"></script> 
+        <script src="scripts/movieTrailerPlay.js"></script> 
     </body>
 </html>

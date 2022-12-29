@@ -5,7 +5,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ABC Cinema | Home</title>
-        <script src="https://kit.fontawesome.com/56016c02ef.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles/index.css">
     </head>
     <body>
@@ -28,25 +27,6 @@
                 </div>
             </div>
             <br>
-            <!--            <div class="slideshow-container">
-                            <div class="mySlides fade">
-                                <img src="assets/theater-banner.png">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="assets/theater-banner.png">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="assets/theater-banner.png">
-                            </div>
-                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                        </div>
-                        <br>
-                        <div class="dots">
-                            <span class="dot" onclick="currentSlide(1)"></span>
-                            <span class="dot" onclick="currentSlide(2)"></span>
-                            <span class="dot" onclick="currentSlide(3)"></span>
-                        </div>-->
             <div class="slideshow-container">
                 <div class="mySlides1">
                     <img src="assets/theater-banner.png" style="width:100%">
@@ -124,25 +104,6 @@
                 </div>
             </div>
             <br>
-            <!--            <div class="slideshow-container">
-                            <div class="mySlides fade">
-                                <img src="assets/movie-banner.png">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="assets/movie-banner.png">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="assets/movie-banner.png">
-                            </div>
-                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                        </div>
-                        <br>
-                        <div style="text-align:center">
-                            <span class="dot" onclick="currentSlide(1)"></span>
-                            <span class="dot" onclick="currentSlide(2)"></span>
-                            <span class="dot" onclick="currentSlide(3)"></span>
-                        </div>-->
             <div class="slideshow-container">
                 <div class="mySlides2">
                     <img src="assets/movie-banner.png" style="width:100%">
@@ -230,6 +191,7 @@
             <br>
         </main>
         <jsp:include page="components/footer.jsp" />
+        <script src="https://kit.fontawesome.com/56016c02ef.js" crossorigin="anonymous"></script>
         <script src="scripts/navbarToggler.js"></script> 
         <script src="scripts/bannerSlider.js"></script> 
     </body>
