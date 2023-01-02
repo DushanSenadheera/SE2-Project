@@ -60,47 +60,61 @@
                             <p>Movie Description</p>
                         </div>
                     </a>
-                    <div class="movie">
-                        <img src="assets/bp.jpg" alt="">
-                        <h4>Movie Name</h4>
-                        <p>Movie Description</p>
-                    </div>
-                    <div class="movie">
-                        <img src="assets/tg.jpg" alt="">
-                        <h4>Movie Name</h4>
-                        <p>Movie Description</p>
-                    </div>
-                    <div class="movie">
-                        <img src="assets/Poster.png" alt="">
-                        <h4>Movie Name</h4>
-                        <p>Movie Description</p>
-                    </div>
+                    <a href="movieDescription.jsp">
+                        <div class="movie">
+                            <img src="assets/bp.jpg" alt="">
+                            <h4>Movie Name</h4>
+                            <p>Movie Description</p>
+                        </div>
+                    </a>
+                    <a href="movieDescription.jsp">
+                        <div class="movie">
+                            <img src="assets/tg.jpg" alt="">
+                            <h4>Movie Name</h4>
+                            <p>Movie Description</p>
+                        </div>
+                    </a>
+                    <a href="movieDescription.jsp">
+                        <div class="movie">
+                            <img src="assets/Poster.png" alt="">
+                            <h4>Movie Name</h4>
+                            <p>Movie Description</p>
+                        </div>
+                    </a>
                 </div>
             </div>
             <br>
             <div class="cooming-soon">
                 <h3>Cooming Soon</h3>
                 <div class="premiering-movies">
-                    <div class="movie">
-                        <img src="assets/jw.jpg" alt="">
-                        <h4>Movie Name</h4>
-                        <p>Movie Description</p>
-                    </div>
-                    <div class="movie">
-                        <img src="assets/transformers.jpg" alt="">
-                        <h4>Movie Name</h4>
-                        <p>Movie Description</p>
-                    </div>
-                    <div class="movie">
-                        <img src="assets/avatar.jpg" alt="">
-                        <h4>Movie Name</h4>
-                        <p>Movie Description</p>
-                    </div>
-                    <div class="movie">
-                        <img src="assets/fx.webp" alt="">
-                        <h4>Movie Name</h4>
-                        <p>Movie Description</p>
-                    </div>
+                    <a href="movieDescription.jsp">
+                        <div class="movie">
+                            <img src="assets/jw.jpg" alt="">
+                            <h4>Movie Name</h4>
+                            <p>Movie Description</p>
+                        </div>
+                    </a>
+                    <a href="movieDescription.jsp">
+                        <div class="movie">
+                            <img src="assets/transformers.jpg" alt="">
+                            <h4>Movie Name</h4>
+                            <p>Movie Description</p>
+                        </div>
+                    </a>
+                    <a href="movieDescription.jsp">
+                        <div class="movie">
+                            <img src="assets/avatar.jpg" alt="">
+                            <h4>Movie Name</h4>
+                            <p>Movie Description</p>
+                        </div>
+                    </a>
+                    <a href="movieDescription.jsp">
+                        <div class="movie">
+                            <img src="assets/fx.webp" alt="">
+                            <h4>Movie Name</h4>
+                            <p>Movie Description</p>
+                        </div>
+                    </a>
                 </div>
             </div>
             <br>
@@ -191,8 +205,6 @@
             <br>
         </main>
         <jsp:include page="components/footer.jsp" />
-        <script src="https://kit.fontawesome.com/56016c02ef.js" crossorigin="anonymous"></script>
-        <script src="scripts/navbarToggler.js"></script> 
         <script src="scripts/bannerSlider.js"></script> 
     </body>
 </html>

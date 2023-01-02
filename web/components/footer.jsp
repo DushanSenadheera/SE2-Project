@@ -50,5 +50,6 @@
                 <small>Designed & Developed By Group 77</small>
             </div>
         </footer>
+        <script src="https://kit.fontawesome.com/56016c02ef.js" crossorigin="anonymous"></script>
     </body>
 </html>
