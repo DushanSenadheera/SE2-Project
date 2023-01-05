@@ -12,7 +12,7 @@
             <div class="sign-in">
                 <div class="sign-in-form">
                     <h1>Sign In</h1>
-                    <form action="index.html" method="POST">
+                    <form action="signIn" method="POST">
                         <input type="text" name="email" placeholder="Email" required>
                         <br>
                         <input type="password" name="password" placeholder="Password" required>

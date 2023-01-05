@@ -12,7 +12,7 @@
             <div class="sign-in">
                 <div class="sign-in-form">
                     <h1>Register</h1>
-                    <form action="index.html" method="POST">
+                    <form action="register" method="POST">
                         <div class="name">
                             <input type="text" name="fname" placeholder="First Name" required>
                             <input type="text" name="lname" placeholder="Last Name" required>
