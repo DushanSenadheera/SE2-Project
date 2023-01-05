@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ADLogin
-    Created on : Jan 3, 2023, 2:59:40 PM
-    Author     : User
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,10 +11,10 @@
             <div class="sign-in">
                 <div class="sign-in-form">
                     <h1>Administration</h1>
-                    <form action="ADdashboard.jsp" method="POST">
-                        <input type="text" name="email" placeholder="User Name" required>
+                    <form action="adminLogin" method="POST">
+                        <input type="text" name="adminUserName" placeholder="User Name" required>
                         <br>
-                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="password" name="adminPassword" placeholder="Password" required>
                         <br>
                         <input type="submit" value="Sign In" class="sign-in-btn">
                     </form>

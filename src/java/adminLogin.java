@@ -1,0 +1,51 @@
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.sql.*;
+
+@WebServlet(urlPatterns = {"/adminLogin"})
+public class adminLogin extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        PrintWriter out = response.getWriter();
+
+        Connection conn = null;
+        Statement stmnt = null;
+        ResultSet rs = null;
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/abc_cinema", "root", "");
+            stmnt = conn.createStatement();
+
+            String qry = "select * from admin where admin_id = 1 ";
+           
+            rs = stmnt.executeQuery(qry);
+           
+            String userName = request.getParameter("adminUserName");
+            String password = request.getParameter("adminPassword");
+
+            while (rs.next()) {
+                String eml = rs.getString(2);
+                String psw = rs.getString(3);
+
+                if (eml.equals(userName) && psw.equals(password)) {
+                    response.sendRedirect(request.getContextPath() + "/ADdashboard.jsp");
+                } else {
+                    out.println("Invalid access");
+                }
+            }
+
+        } catch (Exception e) {
+            out.print(e);
+        }
+    }
+}
