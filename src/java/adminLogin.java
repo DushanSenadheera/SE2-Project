@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(urlPatterns = {"/adminLogin"})
 public class adminLogin extends HttpServlet {
@@ -16,6 +17,7 @@ public class adminLogin extends HttpServlet {
             throws ServletException, IOException {
 
         PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession(true);
 
         Connection conn = null;
         Statement stmnt = null;
@@ -32,6 +34,8 @@ public class adminLogin extends HttpServlet {
            
             String userName = request.getParameter("adminUserName");
             String password = request.getParameter("adminPassword");
+            
+            session.setAttribute("admin", userName);
 
             while (rs.next()) {
                 String eml = rs.getString(2);

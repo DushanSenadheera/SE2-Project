@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ADPremiere-edit
-    Created on : Jan 3, 2023, 12:54:05 PM
-    Author     : User
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,6 +10,14 @@
         <title>ABC Cinema | Premiere Edit</title>
     </head>
     <body>
+        <%
+            String user = (String) session.getAttribute("admin");
+            
+            if(user == null)
+            {
+                response.sendRedirect(request.getContextPath() + "/ADLogin.jsp");
+            }
+        %>
         <header>
             <nav>
                 <img src="assets/logo header.png" alt="header logo" class="logo">
