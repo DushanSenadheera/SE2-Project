@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="components/styles/navbar.css">
     </head>
     <body>
+        <%
+            String user = (String) session.getAttribute("user");
+        %>
         <header>
             <nav>
                 <div class="mobile-nav-header">
@@ -20,11 +23,29 @@
                     <li><a href="#explore">Explore</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="signIn.jsp"><button class="sign-up-btn" id="sign-up-btn-nav">Sign Up</button></a></li>
+                    <%
+                    if(user != null){
+                        %><li id="user-mobile"><a href="profile.jsp"><i class="far fa-user"></i> <%= user %></a></li><%
+                    }
+                    else
+                    {
+                        %><li><a href="signIn.jsp"><button class="sign-up-btn" id="sign-up-btn-nav">Sign Up</button></a></li><%
+                    }
+                    %>
                 </ul>
-                <a href="signIn.jsp"><button class="sign-up-btn" id="sign-up-btn">Sign Up</button></a>
+                <%
+                    if(user != null)
+                    {
+                        %><span id="user-web"><a href="profile.jsp"><i class="far fa-user"></i> <%= user %></a></span><%
+                    }
+                    else
+                    {
+                        %><a href="signIn.jsp"><button class="sign-up-btn" id="sign-up-btn">Sign Up</button></a><%
+                    }
+                %>
             </nav>
         </header>
         <script src="scripts/navbarToggler.js"></script> 
+        <script src="https://kit.fontawesome.com/56016c02ef.js" crossorigin="anonymous"></script>
     </body>
 </html>

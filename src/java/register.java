@@ -32,7 +32,7 @@ public class register extends HttpServlet {
             
             String qry = "insert into user(user_fname, user_lname, user_email, user_password, user_mobile) values('"+fname+"','"+lname+"','"+email+"','"+password+"','"+mobile+"')";
             st.executeUpdate(qry);
-            out.print("Data Inserted Successfully");
+            response.sendRedirect(request.getContextPath() + "/register.jsp");
             
         }
         catch(Exception e){

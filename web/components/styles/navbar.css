@@ -44,6 +44,15 @@ nav ul li a:hover{
     display: none;
 }
 
+#user-mobile{
+    display: none;
+}
+
+#user-web{
+    color: white;
+    cursor: pointer;
+}
+
 .logo{
     width: 62px;
     height: auto;
@@ -87,6 +96,14 @@ nav ul li a:hover{
 
     #sign-up-btn-nav{
         display: block;
+    }
+    
+    #user-mobile{
+        display: block;
+    }
+    
+    #user-web{
+        display: none;
     }
 
     nav ul li{

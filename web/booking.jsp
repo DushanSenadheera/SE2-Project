@@ -6,6 +6,14 @@
         <title>ABC Cinema | Admin</title>
     </head>
     <body>
+        <%
+            String user = (String) session.getAttribute("admin");
+            
+            if(user == null)
+            {
+                response.sendRedirect(request.getContextPath() + "/ADLogin.jsp");
+            }
+        %>
         <header>
             <nav>
                 <img src="logo header.png" alt="header logo" class="logo">

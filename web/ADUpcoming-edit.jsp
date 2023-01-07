@@ -16,7 +16,14 @@
   <title>ABC Cinema | Upcoming Edit</title>
     </head>
     <body>
-       
+       <%
+            String user = (String) session.getAttribute("admin");
+            
+            if(user == null)
+            {
+                response.sendRedirect(request.getContextPath() + "/ADLogin.jsp");
+            }
+        %>
   <header>
     <nav>
       <img src="assets/logo header.png" alt="header logo" class="logo">

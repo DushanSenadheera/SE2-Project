@@ -8,6 +8,14 @@
     </head>
     <body>
         <jsp:include page="components/navbar.jsp" />
+        <%
+            String user = (String) session.getAttribute("user");
+            
+            if(user == null)
+            {
+                response.sendRedirect(request.getContextPath() + "/signIn.jsp");
+            }
+        %>
         <div class="bg">
             <div class="sign-in">
                 <div class="sign-in-form">

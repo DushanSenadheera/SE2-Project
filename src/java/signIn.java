@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(urlPatterns = {"/signIn"})
 public class signIn extends HttpServlet {
@@ -15,7 +16,8 @@ public class signIn extends HttpServlet {
             throws ServletException, IOException {
         
         PrintWriter out = response.getWriter();
-
+        HttpSession session = request.getSession(true);
+        
         Connection conn = null;
         Statement stmnt = null;
         ResultSet rs = null;
@@ -31,7 +33,9 @@ public class signIn extends HttpServlet {
            
             String userName = request.getParameter("email");
             String password = request.getParameter("password");
-
+            
+            session.setAttribute("user", userName);
+            
             while (rs.next()) {
                 String eml = rs.getString(4);
                 String psw = rs.getString(5);
