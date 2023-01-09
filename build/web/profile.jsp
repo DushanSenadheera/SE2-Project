@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,30 +12,56 @@
         <%
             String user = (String) session.getAttribute("user");
             
-            if(user == null)
-            {
+            
+if (user == null) {
                 response.sendRedirect(request.getContextPath() + "/signIn.jsp");
             }
+
+            Connection conn = null;
+            Statement stmnt = null;
+            ResultSet rs = null;
+
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/abc_cinema", "root", "");
+                stmnt = conn.createStatement();
+
+                String qry = "select * from user where user_email = '"+user+"'";
+
+                rs = stmnt.executeQuery(qry);
+
+                while (rs.next()) {
         %>
+
         <div class="bg">
             <div class="sign-in">
                 <div class="sign-in-form">
                     <h1>Profile</h1>
-                    <form action="index.html" method="POST">
+                    <form>
                         <div class="name">
-                            <input type="text" name="fname" value="Jhon" placeholder="First Name" disabled>
-                            <input type="text" name="lname" value="Doe" placeholder="Last Name" disabled>
+                            <input type="text" name="fname" value="<%=rs.getString(2)%>" placeholder="First Name" disabled>
+                            <input type="text" name="lname" value="<%=rs.getString(3)%>" placeholder="Last Name" disabled>
                         </div>
                         <br>
-                        <input type="email" name="email" value="jhondoe@mail.com" placeholder="Email" disabled>
+                        <input type="email" name="email" value="<%=rs.getString(4)%>" placeholder="Email" disabled>
                         <br>
-                        <input type="tel" name="mobile" value="076 123 1234" placeholder="Mobile" disabled>
+                        <input type="tel" name="mobile" value="<%=rs.getString(6)%>" placeholder="Mobile" disabled>
+                        <%
+
+                                }
+                            } catch (Exception e) {
+                                out.print(e);
+                            }
+
+                        %>
                     </form>
-                    <p>
-                        <a href="editProfile.jsp"><input type="button" value="Profile Settings" class="sign-in-btn"></a>
+                    <section>
+                        <a href="editProfile.jsp"><input type="submit" value="Profile Settings" class="sign-in-btn"></a>
                         <br>
-                        <input type="button" value="Delete Account" class="del-acc-btn">
-                    </p>
+                        <form action="deleteAccount" method="POST">
+                            <input type="submit" value="Delete Account" class="del-acc-btn">
+                        </form> 
+                    </section>
                 </div>
             </div>
         </div>

@@ -1,10 +1,6 @@
-<%-- 
-    Document   : ADdashboard
-    Created on : Jan 3, 2023, 12:34:25 PM
-    Author     : User
---%>
-
+<%@page import="org.json.JSONObject"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,9 +14,17 @@
     <body>
         <%
             String user = (String) session.getAttribute("admin");
-            
-            if(user == null)
-            {
+         
+            int value = 123;
+
+            JSONObject json = new JSONObject();
+            json.put("key", value);
+
+            String jsonString = json.toString();
+
+            request.setAttribute("jsonString", jsonString);
+
+            if (user == null) {
                 response.sendRedirect(request.getContextPath() + "/ADLogin.jsp");
             }
         %>
@@ -36,7 +40,6 @@
                 </ul>
             </nav>
         </header>
-
         <div class="container-main">
             <div class="side-menu">
                 <menu>
@@ -61,42 +64,13 @@
             </div>
             <div class="details">
                 <a href="ADPremiere-edit.jsp"><i id="add-btn" class="fa-solid fa-circle-plus"></i></a>
-                <div class="sqrs">
-
-                    <div class="sqr-01">
-                        <h1>12</h1>
-                        <h5>Movies</h5>
-                        <button class="see-more-btn-01">
-                            <p>see more...</p>
-                        </button>
-
-                    </div>
-
-                    <div class="sqr-01">
-                        <h1>20</h1>
-                        <h5>Users</h5>
-                        <button class="see-more-btn-01">
-                            <p>see more...</p>
-                        </button>
-                    </div>
-
-                    <div class="sqr-01">
-                        <h1>120</h1>
-                        <h5>Bookings</h5>
-                        <button class="see-more-btn-01">
-                            <p>see more...</p>
-                        </button>
-                    </div>
-                </div>
-                <div class="banner-management">
-                    <h6>Banner Management</h6>
-                    <label for="b&m">
-                        <input type="file" id="banner-upload" name="b&m" placeholder="Upload a banner">
-                    </label>
+                <div>
+                    <canvas id="myChart"></canvas>
                 </div>
             </div>
         </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="scripts/charts.js"></script> 
         <script src="https://kit.fontawesome.com/608ce7278f.js" crossorigin="anonymous"></script>
     </body>
 </html>

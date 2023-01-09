@@ -188,16 +188,16 @@
                         </ul>
                     </div>
                     <div class="contact-form">
-                        <form class="contact-form-inputs">
+                        <form class="contact-form-inputs" method="POST" action="emailSend">
                             <section>
-                                <input type="text" placeholder="First Name">
-                                <input type="text" placeholder="Last Name">
+                                <input type="text" placeholder="First Name" name="fname">
+                                <input type="text" placeholder="Last Name" name="lname">
                             </section>
-                            <input type="email" placeholder="Email">
+                            <input type="email" placeholder="Email" name="email">
                             <br>
                             <textarea name="message" id="message" rows="12" cols="85" placeholder="Message"></textarea>
                             <br>
-                            <input type="button" value="Submit" id="msg-submit-btn">
+                            <input type="submit" value="Submit" id="msg-submit-btn">
                         </form>
                     </div>
                 </div>

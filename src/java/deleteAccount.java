@@ -1,25 +1,25 @@
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.*;
+import javax.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns = {"/register"})
-public class register extends HttpServlet {
-
+@WebServlet(urlPatterns = {"/deleteAccount"})
+public class deleteAccount extends HttpServlet {
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String fname = request.getParameter("fname");
-        String lname = request.getParameter("lname");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String mobile = request.getParameter("mobile");
-        
+        HttpSession session = request.getSession(true);
+        String user = (String) session.getAttribute("user");
+
         PrintWriter out = response.getWriter();
         
         Connection con = null;
@@ -30,9 +30,11 @@ public class register extends HttpServlet {
             con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/abc_cinema","root","");
             st = con.createStatement();
             
-            String qry = "insert into user(user_fname, user_lname, user_email, user_password, user_mobile) values('"+fname+"','"+lname+"','"+email+"','"+password+"','"+mobile+"')";
-            st.executeUpdate(qry);
-            response.sendRedirect(request.getContextPath() + "/signIn.jsp");
+            String qry = "delete from user where user_email='"+user+"'";
+            st.execute(qry);
+            out.print("Account Deleted Successfully!");
+            session.removeAttribute("user");
+            response.sendRedirect(request.getContextPath() + "/index.jsp");
             
         }
         catch(Exception e){
