@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,20 +9,20 @@
     </head>
     <body>
         <jsp:include page="components/navbar.jsp" />
+        <%String user = (String) session.getAttribute("user");%>
         <div class="bg">
             <div class="sign-in">
                 <div class="sign-in-form">
                     <h1>Change Password</h1>
-                    <form action="index.html" method="POST">
-                        <input type="password" name="password" placeholder="Old Password" required>
+                    <form action="passwordUpdate" method="POST">
+                        <input type="password" name="oldPassword" placeholder="Old Password" required>
                         <br>
-                        <input type="password" name="password" placeholder="New Password" required>
+                        <input type="password" name="newPassword" placeholder="New Password" required>
                         <br>
-                        <input type="password" name="password" placeholder="Confirm New Password" required>
+                        <input type="password" name="confirmNewPassword" placeholder="Confirm New Password" required>
+                        <br>
+                        <input type="submit" value="Update Password" class="sign-in-btn">
                     </form>
-                    <p>
-                        <a href=""><input type="button" value="Update Password" class="sign-in-btn"></a>
-                    </p>
                 </div>
             </div>
         </div>
