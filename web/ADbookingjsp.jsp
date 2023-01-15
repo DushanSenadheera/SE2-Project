@@ -197,7 +197,7 @@
                             <td>ODC</td>
                             <td>12,13,14</td>
                         </tr>
-                        </tr>
+                        
                     </table>
                 </div>
             </div>

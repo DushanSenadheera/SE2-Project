@@ -18,7 +18,6 @@
                         <br>
                         <input type="submit" value="Sign In" class="sign-in-btn">
                     </form>
-                   
                 </div>
             </div>
         </div>

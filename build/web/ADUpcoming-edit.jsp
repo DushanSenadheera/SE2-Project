@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ADUpcoming-edit
-    Created on : Jan 3, 2023, 1:05:57 PM
-    Author     : User
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -62,57 +56,58 @@
 
     <div class="movie-edit">
       <div class="container">
-        <form action="">
-          <label for="mname">
-            <h3>Movie Name</h3>
-          </label>
-          <input type="text" id="mname" name="moviename" placeholder="Movie name here"><br>
-          <label for="m-details">
-            <label for="mname">
-              <h3>Movie Categary</h3>
-            </label>
-            <div class="movie-category">
-              <input type="checkbox" id="category1" name="movie" value="">
-              <label for="category1"> Action & Adventure </label><br>
-              <input type="checkbox" id="category2" name="movie" value="">
-              <label for="category2"> Comedy </label><br>
-              <input type="checkbox" id="category3" name="movie" value="">
-              <label for="category3"> Horror </label><br>
-              <input type="checkbox" id="category4" name="movie" value="">
-              <label for="category4"> Thriller </label><br>
-              <input type="checkbox" id="category5" name="movie" value="">
-              <label for="category5"> Fantasy </label><br>
-            </div>
-            <label for="cast">
-              <h3>Cast</h3>
-            </label>
-            <input type="text" id="cast" name="cast" placeholder="Actor 01, Actor 02, Actor 03 ...">
-            <label for="movie details">
-              <h3>Movie Details</h3>
-              <textarea id="m-details" name="m-details" placeholder="Description here" style="height:200px"></textarea>
-            </label>
-            <label for="banner-img">
-              <h3>Upload a banner</h3>
-              <input type="file" id="banner-upload" name="banner-img">
-            </label>
-            <label for="video">
-              <h3>Link</h3>
-            </label>
-            <input type="text" id="video" name="video" placeholder="URL"><br>
-            <div class="set-price">
-              <label for="price">
-                <h3>Set Price</h3>
-                <input type="text" id="price01" name="price" placeholder="XXXX">
-                <input type="text" id="price02" name="price" placeholder="XXXX">
-                <input type="text" id="price03" name="price" placeholder="ODC(H)">
-                <input type="text" id="price04" name="price" placeholder="ODC(F)">
-                <input type="text" id="price05" name="price" placeholder="Box">
-              </label>
-            </div>
+        <form action="upcommingMovie" method="POST" enctype="multipart/form-data">
+                        <label for="mname">
+                            <h3>Movie Name</h3>
+                        </label>
+                        <input type="text" id="mname" name="moviename" placeholder="Movie name here"><br>
+                        <label for="mdirector">
+                            <h3>Director name</h3>
+                        </label>
+                        <input type="text"  name="moviedirector" placeholder="Director name"><br>
 
-            <input type="submit" value="Cancel" id="Cancel-btn">
-            <input type="submit" value="Submit">
-        </form>
+
+                        <label for="mname">
+                            <h3>Movie Categary</h3>
+                        </label>
+                        <div class="movie-category">
+                            <input type="checkbox"  name="movie" value="Action & Adventure">
+                            <label for="movie"> Action & Adventure </label><br>
+                            <input type="checkbox"  name="movie" value="Comedy">
+                            <label for="movie"> Comedy </label><br>
+                            <input type="checkbox"  name="movie" value="Horror">
+                            <label for="movie"> Horror </label><br>
+                            <input type="checkbox"  name="movie" value="Drama ">
+                            <label for="movie"> Drama </label><br>
+                            <input type="checkbox"  name="movie" value="Fantasy">
+                            <label for="movie"> Fantasy </label><br>
+                            <input type="checkbox"  name="movie" value="Sci-Fi">
+                            <label for="movie"> Sci-Fi </label><br>
+                            <input type="checkbox"  name="movie" value="Romantic">
+                            <label for="movie"> Romantic </label><br>
+                        </div>
+                        <label for="cast">
+                            <h3>Cast</h3>
+                        </label>
+                        <input type="text" id="cast" name="cast" placeholder="Actor 01, Actor 02, Actor 03 ...">
+                        <label for="movie details">
+                            <h3>Movie Details</h3>
+                            <textarea id="m-details" name="m-details" placeholder="Description here" style="height:200px"></textarea>
+                        </label>
+                        <label for="banner-img">
+                            <h3>Upload a banner</h3>
+                            <input type="file" id="banner-upload" name="banner-img">
+                        </label>
+                        <label for="poster-img">
+                            <h3>Upload a background</h3>
+                            <input type="file" id="poster-upload" name="poster-img">
+                        </label>
+                        <label for="video">
+                            <h3>Link</h3>
+                        </label>
+                        <input type="text" id="video" name="video" placeholder="URL"><br>
+                        <input type="submit" value="Submit">
+                    </form>
       </div>
     </div>
   </div>

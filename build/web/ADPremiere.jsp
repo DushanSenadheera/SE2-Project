@@ -1,10 +1,6 @@
-<%-- 
-    Document   : ADPremiere
-    Created on : Jan 3, 2023, 12:41:53 PM
-    Author     : User
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
+<%@page import="javax.servlet.http.HttpSession"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,9 +14,8 @@
     <body>
         <%
             String user = (String) session.getAttribute("admin");
-            
-            if(user == null)
-            {
+
+            if (user == null) {
                 response.sendRedirect(request.getContextPath() + "/ADLogin.jsp");
             }
         %>
@@ -36,7 +31,6 @@
                 </ul>
             </nav>
         </header>
-
         <div class="container-main">
             <div class="side-menu">
                 <menu>
@@ -59,25 +53,50 @@
                     </ul>
                 </menu>
             </div>
-
             <div class="watch-movie">
-
-                <form>
-                    <input type="text" name="search" placeholder="Search..">
-                </form>
+           
                 <div class="movies">
                     <a href="ADPremiere-edit.jsp"><i id="add-btn" class="fa-solid fa-circle-plus"></i></a>
+                        <%
+                            Connection conn = null;
+                            Statement stmnt = null;
+                            ResultSet rs = null;
+
+                            try {
+                                Class.forName("com.mysql.jdbc.Driver");
+                                conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/abc_cinema", "root", "");
+                                stmnt = conn.createStatement();
+
+                                String qry = "select * from premiering_movies";
+
+                                rs = stmnt.executeQuery(qry);
+
+                                while (rs.next()) {
+                                
+                                
+                        %>
                     <div class="movie">
-                        <img class="banner-01" src="assets/avatar.jpg" alt="banner">
-                        <h2>Avatar 2</h2>
+                        <form action="premiere edit.jsp">
+                        <input type="hidden" id="movieName" name="movieName" value="<%=rs.getString(2)%>">
+                        <img class="banner-01" src="uploads/<%=rs.getString(7)%>" alt="banner">
+                        <h2><%=rs.getString(2)%></h2>
                         <div class="actions">
-                            <h6>Yesterday</h6>
+                            <h6><%=rs.getString(3)%></h6>
                             <div class="icons">
-                                <a href="ADPremiere-edit.jsp"><i class="far fa-edit"></i></a>
+                                <input type="submit" value="Edit" >
                                 <i class="fas fa-trash"></i>
                             </div>
                         </div>
+                        </form>
                     </div>
+                    <%
+
+                            }
+                        } catch (Exception e) {
+                            out.print(e);
+                        }
+
+                    %>
                     <div class="movie">
                         <img class="banner-01" src="assets/Batman.jpg" alt="banner">
                         <h2>The Batman</h2>
@@ -180,7 +199,6 @@
                 </div>
             </div>
         </div>
-
         <script src="https://kit.fontawesome.com/608ce7278f.js" crossorigin="anonymous"></script>
     </body>
 </html>

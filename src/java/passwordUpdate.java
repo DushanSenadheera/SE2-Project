@@ -49,6 +49,7 @@ public class passwordUpdate extends HttpServlet {
                 String qry2 = "update user set user_password ='" + newPassword + "' where user_email ='" + user + "' and user_password = '" + userPassword + "'";
                 st.executeUpdate(qry2);
                 out.print("Data Updated Successfully!");
+                response.sendRedirect(request.getContextPath() + "/profile.jsp");
             } else if (!newPassword.equals(confirmNewPassword)) {
                 out.print("New password doesn't match!");
             } else if (!oldPassword.equals(userPassword)) {

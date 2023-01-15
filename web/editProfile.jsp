@@ -10,6 +10,7 @@
     <body>
         <jsp:include page="components/navbar.jsp" />
         <%
+            
             String user = (String) session.getAttribute("user");
             
             if (user == null) {
@@ -28,6 +29,8 @@
                 String qry = "select * from user where user_email = '"+user+"'";
 
                 rs = stmnt.executeQuery(qry);
+                
+                session.setAttribute("userEmail", user);
 
                 while (rs.next()) {
         %>
@@ -35,7 +38,7 @@
             <div class="sign-in">
                 <div class="sign-in-form">
                     <h1>Edit Profile</h1>
-                    <form action="index.html" method="POST">
+                    <form action="updateProfile" method="POST">
                         <div class="name">
                             <input type="text" name="fname" value="<%=rs.getString(2)%>" placeholder="First Name" disabled>
                             <input type="text" name="lname" value="<%=rs.getString(3)%>" placeholder="Last Name" disabled>
@@ -52,13 +55,14 @@
                             }
 
                         %>
-                    </form>
+                    
                     <section>
-                        <form action="updateProfile" method="POST">
+                       
                             <input type="submit" value="Update Profile" class="sign-in-btn">
-                        </form>
+                        
                         <a href="changePassword.jsp"><input type="button" value="Change Password" class="del-acc-btn"></a>
                     </section>
+                        </form>
                 </div>
             </div>
         </div>

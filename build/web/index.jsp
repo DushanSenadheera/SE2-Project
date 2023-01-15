@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
+<%@page import="javax.servlet.http.HttpSession" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,12 +20,12 @@
                     </h1>
                     <a href="#explore"><button class="explore-btn">Explore</button></a>
                     <a href="#explore"><button class="buy-ticket-btn">Buy Tickets</button></a>
-                    <form action="" method="get" name="search-bar">
+                    <form action="movieDescription.jsp" method="get" name="search-bar">
                         <input type="search" name="search" id="search" placeholder="Search..." class="search-bar">
                     </form>
                 </div>
                 <div class="landing-vid">
-                    <video src="assets/bgvid.mp4" autoplay muted loop></video>
+                    <video src="assets/Official Trailer_1.mp4" autoplay muted loop></video>
                 </div>
             </div>
             <br>
@@ -33,11 +35,11 @@
                 </div>
 
                 <div class="mySlides1">
-                    <img src="assets/theater-banner.png" style="width:100%">
+                    <img src="assets/Paper-vs-Digital-Movie-Posters-Featured.jpg" style="width:100%;">
                 </div>
 
                 <div class="mySlides1">
-                    <img src="assets/theater-banner.png" style="width:100%">
+                    <img src="assets/noovie-natiional-cinemedia.webp" style="width:100%;">
                 </div>
 
                 <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
@@ -53,32 +55,56 @@
             <div class="premiering" id="explore">
                 <h3>Premiere Now</h3>
                 <div class="premiering-movies">
-                    <a href="movieDescription.jsp">
-                        <div class="movie">
-                            <img src="assets/Poster.png" alt="">
-                            <h4>Movie Name</h4>
-                            <p>Movie Description</p>
+                    <%
+                        Connection conn = null;
+                        Statement stmnt = null;
+                        ResultSet rs = null;
+
+                        try {
+                            Class.forName("com.mysql.jdbc.Driver");
+                            conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/abc_cinema", "root", "");
+                            stmnt = conn.createStatement();
+
+                            String qry = "select * from premiering_movies";
+
+                            rs = stmnt.executeQuery(qry);
+
+                            while (rs.next()) {
+                    %>
+
+                    <form action="movieDescriptionClick.jsp">
+                        <div class="movie"  >
+                            <input type="hidden" id="movieName" name="movieName" value="<%=rs.getString(2)%>">
+                            <img src="uploads/<%=rs.getString(7)%>" alt="">
+                            <h4><%=rs.getString(2)%></h4>
+                            <input type="submit" value="See More..." class="hidden-btn">
                         </div>
-                    </a>
+                        
+                    </form>
+
+
+                    <%
+                            }
+                        } catch (Exception e) {
+                            out.print(e);
+                        }
+                    %>
                     <a href="movieDescription.jsp">
                         <div class="movie">
                             <img src="assets/bp.jpg" alt="">
                             <h4>Movie Name</h4>
-                            <p>Movie Description</p>
                         </div>
                     </a>
                     <a href="movieDescription.jsp">
                         <div class="movie">
                             <img src="assets/tg.jpg" alt="">
                             <h4>Movie Name</h4>
-                            <p>Movie Description</p>
                         </div>
                     </a>
                     <a href="movieDescription.jsp">
                         <div class="movie">
                             <img src="assets/Poster.png" alt="">
                             <h4>Movie Name</h4>
-                            <p>Movie Description</p>
                         </div>
                     </a>
                 </div>
@@ -87,32 +113,48 @@
             <div class="cooming-soon">
                 <h3>Cooming Soon</h3>
                 <div class="premiering-movies">
-                    <a href="movieDescription.jsp">
-                        <div class="movie">
-                            <img src="assets/jw.jpg" alt="">
-                            <h4>Movie Name</h4>
-                            <p>Movie Description</p>
+                    <%
+                        try {
+                            Class.forName("com.mysql.jdbc.Driver");
+                            conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/abc_cinema", "root", "");
+                            stmnt = conn.createStatement();
+
+                            String qry = "select * from upcomming_movies";
+
+                            rs = stmnt.executeQuery(qry);
+
+                            while (rs.next()) {
+                    %>
+                    <form action="movieDescriptionUp.jsp">
+                        <input type="hidden" id="movieNameUp" name="movieNameUp" value="<%=rs.getString(2)%>">
+                        <div class="movie" >
+                            <img src="uploads/<%=rs.getString(7)%>" alt="">
+                            <h4><%=rs.getString(2)%></h4>
+                            <input type="submit" value="See More..." class="hidden-btn">
                         </div>
-                    </a>
+                    </form>
+                    <%
+                            }
+                        } catch (Exception e) {
+                            out.print(e);
+                        }
+                    %>
                     <a href="movieDescription.jsp">
                         <div class="movie">
                             <img src="assets/transformers.jpg" alt="">
                             <h4>Movie Name</h4>
-                            <p>Movie Description</p>
                         </div>
                     </a>
                     <a href="movieDescription.jsp">
                         <div class="movie">
                             <img src="assets/avatar.jpg" alt="">
                             <h4>Movie Name</h4>
-                            <p>Movie Description</p>
                         </div>
                     </a>
                     <a href="movieDescription.jsp">
                         <div class="movie">
                             <img src="assets/fx.webp" alt="">
                             <h4>Movie Name</h4>
-                            <p>Movie Description</p>
                         </div>
                     </a>
                 </div>
@@ -148,7 +190,7 @@
                         <img src="assets/about1.png" alt="">
                     </div>
                     <div class="about-content">
-                        <h5>Title</h5>
+                        <h3>Title</h3>
                         <br>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi accusantium delectus expedita. Optio praesentium ipsam suscipit cum quod perspiciatis corrupti.</p>
                     </div>
@@ -156,7 +198,7 @@
                 <br>
                 <section id="about-us-reverse">
                     <div class="about-content">
-                        <h5>Title</h5>
+                        <h3>Title</h3>
                         <br>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi accusantium delectus expedita. Optio praesentium ipsam suscipit cum quod perspiciatis corrupti.</p>
                     </div>
@@ -170,7 +212,7 @@
                         <img src="assets/about3.png" alt="">
                     </div>
                     <div class="about-content">
-                        <h5>Title</h5>
+                        <h3>Title</h3>
                         <br>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi accusantium delectus expedita. Optio praesentium ipsam suscipit cum quod perspiciatis corrupti.</p>
                     </div>
@@ -197,7 +239,7 @@
                             <br>
                             <textarea name="message" id="message" rows="12" cols="85" placeholder="Message"></textarea>
                             <br>
-                            <input type="submit" value="Submit" id="msg-submit-btn">
+                            <input type="submit" value="Send Feedback" id="msg-submit-btn">
                         </form>
                     </div>
                 </div>

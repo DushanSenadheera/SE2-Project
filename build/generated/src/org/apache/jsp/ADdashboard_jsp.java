@@ -5,7 +5,6 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import org.json.JSONObject;
 import java.sql.*;
-import com.google.gson.Gson;
 
 public final class ADdashboard_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -47,7 +46,6 @@ public final class ADdashboard_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -62,11 +60,8 @@ public final class ADdashboard_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        ");
 
             String user = (String) session.getAttribute("admin");
-            int mynum = 23;
-
-//            Gson gson = new Gson();
-//            String json = gson.toJson(mynum);
-            String value = "some value";
+         
+            int value = 123;
 
             JSONObject json = new JSONObject();
             json.put("key", value);
@@ -75,45 +70,6 @@ public final class ADdashboard_jsp extends org.apache.jasper.runtime.HttpJspBase
 
             request.setAttribute("jsonString", jsonString);
 
-
-        
-      out.write("\n");
-      out.write("        <script>\n");
-      out.write("            const ctx = document.getElementById('myChart');\n");
-      out.write("\n");
-      out.write("//            fetch('ADdashboard.jsp')\n");
-      out.write("//                    .then(response => response.json())\n");
-      out.write("//                    .then(json => {\n");
-      out.write("//                        console.log(json);\n");
-      out.write("//                    });\n");
-      out.write("\n");
-      out.write("let jsonString = '");
-      out.print( request.getAttribute("jsonString") );
-      out.write("';\n");
-      out.write("let json = JSON.parse(jsonString);\n");
-      out.write("let value = json.key;\n");
-      out.write(" console.log(json);\n");
-      out.write("\n");
-      out.write("            new Chart(ctx, {\n");
-      out.write("                type: 'line',\n");
-      out.write("                data: {\n");
-      out.write("                    labels: ['red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],\n");
-      out.write("                    datasets: [{\n");
-      out.write("                            label: '# of Votes',\n");
-      out.write("                            data: [mynum, 19, 3, 5, 2, 3],\n");
-      out.write("                            borderWidth: 1\n");
-      out.write("                        }]\n");
-      out.write("                },\n");
-      out.write("                options: {\n");
-      out.write("                    scales: {\n");
-      out.write("                        y: {\n");
-      out.write("                            beginAtZero: true\n");
-      out.write("                        }\n");
-      out.write("                    }\n");
-      out.write("                }\n");
-      out.write("            });\n");
-      out.write("        </script>\n");
-      out.write("        ");
             if (user == null) {
                 response.sendRedirect(request.getContextPath() + "/ADLogin.jsp");
             }
@@ -125,15 +81,12 @@ public final class ADdashboard_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <ul>\n");
       out.write("                    <div class=\"nav-right\">\n");
       out.write("                        <li>\n");
-      out.write("                            <h5>");
-out.println(json);
-      out.write("</h5>\n");
+      out.write("                            <h5>Admin</h5>\n");
       out.write("                        </li>\n");
       out.write("                    </div>\n");
       out.write("                </ul>\n");
       out.write("            </nav>\n");
       out.write("        </header>\n");
-      out.write("\n");
       out.write("        <div class=\"container-main\">\n");
       out.write("            <div class=\"side-menu\">\n");
       out.write("                <menu>\n");
@@ -156,55 +109,15 @@ out.println(json);
       out.write("                    </ul>\n");
       out.write("                </menu>\n");
       out.write("            </div>\n");
-      out.write("\n");
-      out.write("\n");
       out.write("            <div class=\"details\">\n");
-      out.write("                <a href=\"ADPremiere-edit.jsp\"><i id=\"add-btn\" class=\"fa-solid fa-circle-plus\"></i></a>\n");
-      out.write("                <div class=\"sqrs\">\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("                    <div class=\"sqr-01\">\n");
-      out.write("                        <h1>12</h1>\n");
-      out.write("                        <h5>Movies</h5>\n");
-      out.write("                        <button class=\"see-more-btn-01\">\n");
-      out.write("                            <p>see more...</p>\n");
-      out.write("                        </button>\n");
-      out.write("\n");
-      out.write("                    </div>\n");
-      out.write("\n");
-      out.write("                    <div class=\"sqr-01\">\n");
-      out.write("                        <h1>20</h1>\n");
-      out.write("                        <h5>Users</h5>\n");
-      out.write("                        <button class=\"see-more-btn-01\">\n");
-      out.write("                            <p>see more...</p>\n");
-      out.write("                        </button>\n");
-      out.write("                    </div>\n");
-      out.write("\n");
-      out.write("                    <div class=\"sqr-01\">\n");
-      out.write("                        <h1>120</h1>\n");
-      out.write("                        <h5>Bookings</h5>\n");
-      out.write("                        <button class=\"see-more-btn-01\">\n");
-      out.write("                            <p>see more...</p>\n");
-      out.write("                        </button>\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"banner-management\">\n");
-      out.write("                    <h6>Banner Management</h6>\n");
-      out.write("                    <label for=\"b&m\">\n");
-      out.write("                        <input type=\"file\" id=\"banner-upload\" name=\"b&m\" placeholder=\"Upload a banner\">\n");
-      out.write("                    </label>\n");
-      out.write("                </div>\n");
+      out.write("                \n");
       out.write("                <div>\n");
       out.write("                    <canvas id=\"myChart\"></canvas>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
-      out.write("\n");
       out.write("        <script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>\n");
-      out.write("\n");
-      out.write("\n");
+      out.write("        <script src=\"scripts/charts.js\"></script> \n");
       out.write("        <script src=\"https://kit.fontawesome.com/608ce7278f.js\" crossorigin=\"anonymous\"></script>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
