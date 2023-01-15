@@ -29,7 +29,7 @@
                     }
                     else
                     {
-                        %><li><a href="signIn.jsp"><button class="sign-up-btn" id="sign-up-btn-nav">Sign Up</button></a></li><%
+                        %><li><a href="signIn.jsp"><button class="sign-up-btn" id="sign-up-btn-nav">Sign In</button></a></li><%
                     }
                     %>
                 </ul>
@@ -40,7 +40,7 @@
                     }
                     else
                     {
-                        %><a href="signIn.jsp"><button class="sign-up-btn" id="sign-up-btn">Sign Up</button></a><%
+                        %><a href="signIn.jsp"><button class="sign-up-btn" id="sign-up-btn">Sign In</button></a><%
                     }
                 %>
             </nav>

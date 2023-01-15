@@ -2,6 +2,8 @@ footer{
     background-color: #161616;
     display: block;
     padding: 28px;
+    bottom: 0;
+    box-shadow: 0px -7px 17px -4px rgba(0,0,0,0.7);
 }
 
 .footer-top{

@@ -19,7 +19,7 @@ public class updateProfile extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession session = request.getSession(true);
-        String user = (String) session.getAttribute("user");
+        String user = (String) session.getAttribute("userEmail");
 
         PrintWriter out = response.getWriter();
 

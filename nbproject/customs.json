@@ -3,6 +3,9 @@
     "attributes": {
         "allow": {
             "context": "iframe"
+        },
+        "value": {
+            "context": "textarea"
         }
     }
 }

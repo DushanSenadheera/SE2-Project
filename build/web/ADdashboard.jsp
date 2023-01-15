@@ -63,7 +63,7 @@
                 </menu>
             </div>
             <div class="details">
-                <a href="ADPremiere-edit.jsp"><i id="add-btn" class="fa-solid fa-circle-plus"></i></a>
+                
                 <div>
                     <canvas id="myChart"></canvas>
                 </div>

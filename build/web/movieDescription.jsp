@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,14 +9,45 @@
     </head>
     <body>
         <jsp:include page="components/navbar.jsp" />
+        <%
+            Connection conn = null;
+            Statement stmnt = null;
+            ResultSet rs = null;
+
+            String movieName = request.getParameter("search");
+
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/abc_cinema", "root", "");
+                stmnt = conn.createStatement();
+
+                String qry = "select * from premiering_movies where movie_name = '" + movieName + "' ";
+
+                rs = stmnt.executeQuery(qry);
+
+                while (rs.next()) {
+
+
+        %>
         <div class="background-poster">
+            <img src="uploads/<%=rs.getString(8)%>" />
             <div class="movie-description">
                 <div class="title">
-                    <h1>Black Adam</h1>
-                    <h4>By First Last</h4>
+                    <h1><%=rs.getString(2)%></h1>
+                    <h4>By <%=rs.getString(3)%></h4>
                 </div>
                 <div class="catergories">
-                    <p> <span>action</span> <span>adventure</span> <span>sci-fi</span> <span>fantasy</span> <span>comedy</span> <span>romantic</span> <span>supernatural</span> <span>horror</span> <span>thriller</span> <span>drama</span> <span>crime</span> <span>mystry</span></p>
+                    <%
+                      String category = rs.getString(4);
+                      String[] catArray = category.split(",");
+                      
+                          
+                          
+                          for(int i = 0; i<catArray.length; i++){
+                              %><span><%= catArray[i] %></span><%
+                          }
+                      
+                    %>
                 </div>
                 <div class="duration">
                     <i class="far fa-clock"></i> 
@@ -23,18 +55,18 @@
                 </div>
                 <div class="cast">
                     <h4>Cast</h4>
-                    <p>actor, actor, actress, actress, actor</p>
+                    <p><%=rs.getString(5)%></p>
                 </div>
                 <div class="movie-details">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit assumenda nisi, iusto beatae eum odio expedita doloribus, vel corporis necessitatibus ad cupiditate eius animi ea! Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit assumenda nisi cupiditate eius animi ea! Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit assumenda
+                        <%=rs.getString(6)%>
                     </p>
                 </div>
                 <div class="cta-btns">
-                    
+
                     <div id="overlay" onclick="off()">
                         <iframe width="420" height="315" id="trailer"
-                                src="https://www.youtube.com/watch?v=mkomfZHG5q4">
+                                src="<%=rs.getString(9)%>">
                         </iframe>
                     </div>
 
@@ -45,33 +77,15 @@
                 </div>
             </div>
         </div>
-        <div class="premiering" id="explore">
-            <h3>Premiere Now</h3>
-            <div class="premiering-movies">
-                <a href="movieDescription.jsp">
-                    <div class="movie">
-                        <img src="assets/Poster.png" alt="">
-                        <h4>Movie Name</h4>
-                        <p>Movie Description</p>
-                    </div>
-                </a>
-                <div class="movie">
-                    <img src="assets/bp.jpg" alt="">
-                    <h4>Movie Name</h4>
-                    <p>Movie Description</p>
-                </div>
-                <div class="movie">
-                    <img src="assets/tg.jpg" alt="">
-                    <h4>Movie Name</h4>
-                    <p>Movie Description</p>
-                </div>
-                <div class="movie">
-                    <img src="assets/Poster.png" alt="">
-                    <h4>Movie Name</h4>
-                    <p>Movie Description</p>
-                </div>
-            </div>
-        </div>
+        <%
+
+                }
+            } catch (Exception e) {
+                out.print(e);
+            }
+
+        %>
+        
         <jsp:include page="components/footer.jsp" />
         <script src="https://kit.fontawesome.com/56016c02ef.js" crossorigin="anonymous"></script>
         <script src="scripts/navbarToggler.js"></script> 

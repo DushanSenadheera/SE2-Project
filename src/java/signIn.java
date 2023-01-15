@@ -26,23 +26,23 @@ public class signIn extends HttpServlet {
             Class.forName("com.mysql.jdbc.Driver");
             conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/abc_cinema", "root", "");
             stmnt = conn.createStatement();
+            
+            String userName = request.getParameter("email");
+            String password = request.getParameter("password");
 
-            String qry = "select * from user";
+            String qry = "select * from user where user_email = '"+userName+"'";
            
             rs = stmnt.executeQuery(qry);
            
-            String userName = request.getParameter("email");
-            String password = request.getParameter("password");
-            
-            session.setAttribute("user", userName);
-            
             while (rs.next()) {
                 String eml = rs.getString(4);
                 String psw = rs.getString(5);
                
                 if (eml.equals(userName) && psw.equals(password)) {
+                    session.setAttribute("user", userName);
                     response.sendRedirect(request.getContextPath() + "/index.jsp");
-                } else {
+                }
+                else {
                     out.println("Invalid access");
                 }
             }
