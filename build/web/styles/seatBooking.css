@@ -38,6 +38,10 @@ body {
   justify-content: space-around;
 }
 
+.owned{
+    background-color: red;
+}
+
 .movie {
   padding: 14px;
   text-align: center;
@@ -102,6 +106,12 @@ select {
   background-color: rgba(0, 0, 0, 0.507);
   border: none;
   
+}
+
+.formStyle{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #total-titcket-priceDisplay{
@@ -205,6 +215,7 @@ select {
   height: 32px;
   border-radius: 5px;
   background-color: red;
+  color: red;
 }
 
 .seat-selected {
@@ -235,6 +246,10 @@ select {
 
 .seatbooked {
   background-color: greenyellow;
+}
+
+.bookedSeats{
+    display: none;
 }
 
 #snackbar {

@@ -55,7 +55,7 @@
             <div class="movie-edit">
                 <div class="container">
                     <%
-                        String movieName = request.getParameter("movieName");
+                        String movieName = request.getParameter("movieNameID");
 
                         Connection conn = null;
                         Statement stmnt = null;
@@ -74,7 +74,8 @@
 
 
                     %>
-                    <form action="premierMovie" method="POST" enctype="multipart/form-data">
+                    <form action="PremiereMovieUpdate" method="POST" enctype="multipart/form-data">
+                         <input type="hidden" id="movieName" name="movieNameID" value="<%=rs.getString(2)%>">
                         <label for="mname">
                             <h3>Movie Name</h3>
                         </label>

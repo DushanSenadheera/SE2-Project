@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2023 at 06:05 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jan 31, 2023 at 09:10 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -51,16 +51,31 @@ CREATE TABLE `payment` (
   `user_email` varchar(50) NOT NULL,
   `user_mobile` varchar(10) NOT NULL,
   `user_seats` varchar(100) NOT NULL,
-  `user_amount` int(11) NOT NULL
+  `user_amount` int(11) NOT NULL,
+  `date` varchar(25) NOT NULL,
+  `time` varchar(10) NOT NULL,
+  `movieName` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `payment`
 --
 
-INSERT INTO `payment` (`paymentID`, `user_email`, `user_mobile`, `user_seats`, `user_amount`) VALUES
-(1, 'dushan@mail.com', '0754211234', 'A2,A3', 2600),
-(2, 'dushan@mail.com', '0754211234', 'A2,A3,A4', 3900);
+INSERT INTO `payment` (`paymentID`, `user_email`, `user_mobile`, `user_seats`, `user_amount`, `date`, `time`, `movieName`) VALUES
+(33, 'dushan@mail.com', '0761231234', 'A2,A5,A10', 3900, '02 Jan', '9.00 AM', 'Avatar: The Way of Water'),
+(38, 'dushan@mail.com', '0761231234', 'B2,B4', 2600, '04 Jan', '5.00 PM', 'Avatar: The Way of Water'),
+(42, 'dushan@mail.com', '0761231234', 'A1,A2,A3,A4,A5', 6500, '04 Jan', '5.00 PM', 'Avatar: The Way of Water'),
+(45, 'dushan@mail.com', '0761231234', 'A5', 1300, '04 Jan', '5.00 PM', 'Avatar: The Way of Water'),
+(57, 'dushan@mail.com', '0761231234', 'A1', 1300, '02 Jan', '9.00 AM', 'Avatar: The Way of Water'),
+(59, 'dushan@mail.com', '0761231234', 'A1,A2', 2600, '02 Jan', '9.00 AM', 'Avatar: The Way of Water'),
+(60, 'dushan@mail.com', '0761231234', 'A5,A6', 2600, '02 Jan', '9.00 AM', 'Avatar: The Way of Water'),
+(61, 'dushan@mail.com', '0761231234', 'A2,A3', 2600, '02 Jan', '9.00 AM', 'Avatar: The Way of Water'),
+(63, 'dushan@mail.com', '0761231234', 'A1', 1300, '02 Jan', '9.00 AM', 'Avatar: The Way of Water'),
+(64, 'dushan@mail.com', '0761231234', 'A1,A5,A10', 3900, '02 Jan', '9.00 AM', 'Avatar: The Way of Water'),
+(65, 'dushan@mail.com', '0761231234', 'A1', 1300, '02 Jan', '9.00 AM', 'Avatar: The Way of Water'),
+(66, 'dushan@mail.com', '0761231234', 'A1', 1300, '02 Jan', '9.00 AM', 'Avatar: The Way of Water'),
+(67, 'dushan@mail.com', '0761231234', 'A9', 1300, '04 Jan', '2.00 PM', 'Avatar: The Way of Water'),
+(68, 'dushan@mail.com', '0761231234', 'A9', 1300, '04 Jan', '2.00 PM', 'Avatar: The Way of Water');
 
 -- --------------------------------------------------------
 
@@ -74,7 +89,7 @@ CREATE TABLE `premiering_movies` (
   `movie_director` varchar(50) NOT NULL,
   `movie_category` varchar(50) NOT NULL,
   `movie_cast` varchar(100) NOT NULL,
-  `movie_details` varchar(250) NOT NULL,
+  `movie_details` varchar(380) NOT NULL,
   `movie_banner` varchar(50) NOT NULL,
   `movie_poster` varchar(50) NOT NULL,
   `movie_link` varchar(150) NOT NULL,
@@ -88,8 +103,8 @@ CREATE TABLE `premiering_movies` (
 --
 
 INSERT INTO `premiering_movies` (`movie_id`, `movie_name`, `movie_director`, `movie_category`, `movie_cast`, `movie_details`, `movie_banner`, `movie_poster`, `movie_link`, `movie_gold`, `movie_silver`, `movie_bronze`) VALUES
-(4, 'movie1', 'director name', 'Action & Adventure,Drama ,Fantasy', 'name1, name2, name3, name4', 'in here summery and details about the movie', 'Screen Shot 2023-01-12 at 10.22.07.png', 'roll-call-3.jpg', 'link here', 3000, 2000, 1000),
-(5, 'movie2', 'dsad', 'Comedy,Romantic', 'das, sada, gfdg', 'ada fdg awd', 'images.png', 'das.jpg', 'sadsad aw', 3000, 2300, 1500);
+(6, 'Avatar: The Way of Water', 'James Cameron', 'Action & Adventure,Fantasy,Sci-Fi', 'Sam Worthington, Zoe Saldana, Sigourney Weaver', 'Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Navi race to protect their home.', 'avatar.jpg', 'av2.jpg', 'https://www.youtube.com/embed/a8Gx8wiNbs8', 2600, 1800, 1200),
+(7, 'Gajaman', 'Chanaka Perera', 'Action & Adventure,Comedy,Romantic', 'Suneth Chitrananda, Gaminda Priyaviraj ,Dasun Pathirana ,Yureni Noshika, Rashi Prabodha', 'The film revolves around Gajaman and his connection with Magodisthuma. Gajaman, the most trustworthy aide of Magodisthuma, is assigned to escort his daughter who is returning from higher studies in abroad.\r\n\r\nBut when Gajaman sees Padmi, the politicianâs daughter, he falls in love with her at first sight. But Gajaman is reluctant to express his love ', 'gajaman.jpg', 'Gajaman Release Date.jpg', 'https://www.youtube.com/embed/RlVEqs4-SPQ', 2000, 1500, 1200);
 
 -- --------------------------------------------------------
 
@@ -99,11 +114,11 @@ INSERT INTO `premiering_movies` (`movie_id`, `movie_name`, `movie_director`, `mo
 
 CREATE TABLE `upcomming_movies` (
   `upmovie_id` int(11) NOT NULL,
-  `upmovie_name` varchar(30) NOT NULL,
+  `upmovie_name` varchar(100) NOT NULL,
   `upmovie_director` varchar(50) NOT NULL,
   `upmovie_category` varchar(100) NOT NULL,
   `upmovie_cast` varchar(150) NOT NULL,
-  `upmovie_details` varchar(250) NOT NULL,
+  `upmovie_details` varchar(380) NOT NULL,
   `upmovie_banner` varchar(50) NOT NULL,
   `upmovie_poster` varchar(50) NOT NULL,
   `upmovie_link` varchar(100) NOT NULL
@@ -114,10 +129,9 @@ CREATE TABLE `upcomming_movies` (
 --
 
 INSERT INTO `upcomming_movies` (`upmovie_id`, `upmovie_name`, `upmovie_director`, `upmovie_category`, `upmovie_cast`, `upmovie_details`, `upmovie_banner`, `upmovie_poster`, `upmovie_link`) VALUES
-(1, 'upmovie2', 'das asd', 'Horror,Drama ', 'name1, name2, name3, name4 , sasd', 'dasd a', 'Untitled design.png', 'wallpaper.png', 'gfdg'),
-(2, 'fgsd', 'asd ad', 'Fantasy,Sci-Fi', 'lhjkuuy', 'uiuiyu', 'UI hackthon certificate.png', 'wallpaper.png', 'fdssd'),
-(3, 'fdsf', 'dsfsdf', 'Action & Adventure,Comedy', 'fsdsf', 'sdfdssd', '#DevFestLK_badge.png', 'Dushan Senadheera.png', 'asdasd'),
-(4, 'sad', 'asd', 'Action & Adventure,Comedy', 'das', 'sad', 'UI hackthon certificate.png', 'wallpaper.png', 'dsad');
+(5, 'Jhon Wick 4', 'Chad Stahelski', 'Action & Adventure', 'Keanu Reeves, Donnie Yen,  Asia Kate Dillon, Scott Adkins', 'With the price on his head ever increasing, legendary hit man John Wick takes his fight against the High Table global as he seeks out the most powerful players in the underworld, from New York to Paris to Japan to Berlin.', 'jw.jpg', 'jw3-d33.webp', 'https://www.youtube.com/embed/qEVUtrk8_B4'),
+(6, 'Transformers: Rise of the Beasts', 'Steven Caple Jr.', 'Action & Adventure,Sci-Fi', 'Anthony Ramos, Dominique Fishback, Luna Lauren VÃ©lez, Tobe Nwigwe ,Peter Cullen', 'During the 1990s, the Maximals, Predacons and Terrorcons join the existing battle on Earth between Autobots and Decepticons.', 'transformer.jpg', 'thumb-1920-1177341.jpg', '\"https://www.youtube.com/embed/WWWDskI46Js\"'),
+(7, 'Shazam! Fury of the Gods', 'David F. Sandberg', 'Action & Adventure,Fantasy', 'Zachary Levi, Asher Angel, Jack Dylan Grazer ,Rachel Zegler, Adam Brody', 'Bestowed with the powers of the gods, Billy Batson and his fellow foster kids are still learning how to juggle teenage life with their \r\nsuperhero alter egos. When a vengeful trio of ancient gods arrive on Earth in search of the magic stolen from them long ago,\r\n Shazam and his allies get thrust into a battle for their superpowers, their lives, and the fate of the world.', 'shazam poster.jpg', 'shazam banner.jpg', 'https://www.youtube.com/embed/AIc671o9yCI');
 
 -- --------------------------------------------------------
 
@@ -139,7 +153,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_fname`, `user_lname`, `user_email`, `user_password`, `user_mobile`) VALUES
-(2, 'Dushan', 'Senadheera', 'dushan@mail.com', 'dushan', '0754211234');
+(2, 'Dushan', 'Senadheera', 'dushan@mail.com', 'dushan123', '0761231234');
 
 --
 -- Indexes for dumped tables
@@ -183,19 +197,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `premiering_movies`
 --
 ALTER TABLE `premiering_movies`
-  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `upcomming_movies`
 --
 ALTER TABLE `upcomming_movies`
-  MODIFY `upmovie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `upmovie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user`

@@ -4,6 +4,11 @@
     Author     : User
 --%>
 
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -52,7 +57,7 @@
                         <li><a href="ADUpcoming.jsp">
                                 <p>Upcoming</p>
                             </a></li>
-                        <li><a href="#">
+                        <li><a href="index.jsp">
                                 <p>Log-out</p>
                             </a></li>
                     </ul>
@@ -63,141 +68,46 @@
                 <div class="booking-details">
                     <table>
                         <tr>
-                            <th>User</th>
                             <th>Movie</th>
+                            <th>User</th>
+                            <th>Mobile</th>
                             <th>Date</th>
                             <th>Time</th>
-                            <th>Category</th>
                             <th>Seats</th>
+                            <th>Amount</th>
                         </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
-                        <tr>
-                            <td>u_name01</td>
-                            <td>Avatar</td>
-                            <td>Tue</td>
-                            <td>8.00pm</td>
-                            <td>ODC</td>
-                            <td>12,13,14</td>
-                        </tr>
+                        <%
+                        Connection conn = null;
+                        Statement stmnt = null;
+                        ResultSet rs = null;
+
+                        try {
+                            Class.forName("com.mysql.jdbc.Driver");
+                            conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/abc_cinema", "root", "");
+                            stmnt = conn.createStatement();
+
+                            String qry = "select * from payment";
+
+                            rs = stmnt.executeQuery(qry);
+
+                            while (rs.next()) {
+                    %>
                         
+                        <tr>
+                            <td><%=rs.getString(8)%></td>
+                            <td><%=rs.getString(2)%></td>
+                            <td><%=rs.getString(3)%></td>
+                            <td><%=rs.getString(6)%></td>
+                            <td><%=rs.getString(7)%></td>
+                            <td><%=rs.getString(4)%></td>
+                            <td><%=rs.getString(5)%></td>
+                        </tr>
+                        <%
+                            }
+                        } catch (Exception e) {
+                            out.print(e);
+                        }
+                    %>
                     </table>
                 </div>
             </div>

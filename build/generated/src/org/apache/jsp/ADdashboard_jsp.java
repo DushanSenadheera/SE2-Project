@@ -61,14 +61,7 @@ public final class ADdashboard_jsp extends org.apache.jasper.runtime.HttpJspBase
 
             String user = (String) session.getAttribute("admin");
          
-            int value = 123;
-
-            JSONObject json = new JSONObject();
-            json.put("key", value);
-
-            String jsonString = json.toString();
-
-            request.setAttribute("jsonString", jsonString);
+            
 
             if (user == null) {
                 response.sendRedirect(request.getContextPath() + "/ADLogin.jsp");
@@ -110,7 +103,19 @@ public final class ADdashboard_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </menu>\n");
       out.write("            </div>\n");
       out.write("            <div class=\"details\">\n");
-      out.write("                \n");
+      out.write("                ");
+
+                    int value = 21;
+
+                    JSONObject json = new JSONObject();
+                    json.put("key", value);
+
+                    String jsonString = json.toString();
+
+                    request.setAttribute("jsonString", jsonString);
+
+                
+      out.write("\n");
       out.write("                <div>\n");
       out.write("                    <canvas id=\"myChart\"></canvas>\n");
       out.write("                </div>\n");

@@ -61,7 +61,6 @@ public final class ADLogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <br>\n");
       out.write("                        <input type=\"submit\" value=\"Sign In\" class=\"sign-in-btn\">\n");
       out.write("                    </form>\n");
-      out.write("                   \n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");

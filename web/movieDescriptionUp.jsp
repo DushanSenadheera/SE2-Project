@@ -23,7 +23,7 @@
                 stmnt = conn.createStatement();
 
                 
-               String qry = "select * from upcomming_movies where movie_name = '" + movieNameUp + "' ";
+               String qry = "select * from upcomming_movies where upmovie_name = '" + movieNameUp + "' ";
                             rs = stmnt.executeQuery(qry);
                 
 
@@ -74,7 +74,6 @@
                     </div>
 
                     <div style="padding:20px">
-                        <a href="seatBooking.jsp"><button class="btn-buy">Buy Ticket</button></a>
                         <button class="btn-trailer" onclick="on()">Watch Trailer</button>
                     </div>
                 </div>

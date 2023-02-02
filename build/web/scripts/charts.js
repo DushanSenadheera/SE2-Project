@@ -1,18 +1,14 @@
 const ctx = document.getElementById('myChart');
 
-let jsonString = '<%= request.getAttribute("jsonString")%>';
-let json = JSON.parse(jsonString);
-let value = json.key;
-let num = 23;
-console.log(value);
+var data = JSON.parse(document.getElementById("data").value);
 
 new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         datasets: [{
-                label: '# of Votes',
-                data: [value, 19, 3, 5, 2, 3],
+                label: 'Week Summery',
+                data: [data, 38, 21, 45, 61, 54],
                 borderWidth: 1
             }]
     },

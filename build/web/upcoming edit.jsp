@@ -55,7 +55,7 @@
             <div class="movie-edit">
                 <div class="container">
                     <%
-                        String movieName = request.getParameter("movieName");
+                        String movieName = request.getParameter("UpMovieName");
 
                         Connection conn = null;
                         Statement stmnt = null;

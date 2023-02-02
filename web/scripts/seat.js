@@ -19,6 +19,7 @@ function getSeat(elementId) {
     return seatCode;
 }
 
+
 // set or remove seat based on whether it's available on current seat array
 function setSeat(elementId) {
     const seatElement = document.getElementById(elementId);
@@ -41,6 +42,7 @@ function setSeat(elementId) {
 function showSeats() {
     console.log(selectedSeats);
     document.getElementById('seatInfo').value=selectedSeats;
+    document.getElementById('seat-info').value=selectedSeats;
 }
 
 let total = 0;
@@ -51,7 +53,22 @@ function seatPrice(seatPrice){
     
     total += price;
     
+    
     document.getElementById('totaltitcketprice').value=total;
+    document.getElementById('total-titcket-priceDisplay').value=total;
     console.log(total);
 }
 
+
+let booked_seats = [];
+
+const elements = document.getElementsByClassName("bookedSeats");
+const Seats = document.getElementsByClassName("seat");
+
+
+for (let i = 0; i < elements.length; i++) {
+    if(Seats.innerHTML === elements.innerHTML){
+        Seats[i].style.backgroundColor = 'red';
+        Seats[i].style.color = 'white';
+    }
+}
