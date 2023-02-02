@@ -47,7 +47,7 @@
                         <li><a href="ADUpcoming.jsp">
                                 <p>Upcoming</p>
                             </a></li>
-                        <li><a href="#">
+                        <li><a href="index.jsp">
                                 <p>Log-out</p>
                             </a></li>
                     </ul>
@@ -76,8 +76,8 @@
                                 
                         %>
                     <div class="movie">
-                        <form action="premiere edit.jsp">
-                        <input type="hidden" id="movieName" name="movieName" value="<%=rs.getString(2)%>">
+                        <form action="premiereEdit.jsp">
+                        <input type="hidden" id="movieName" name="movieNameID" value="<%=rs.getString(2)%>">
                         <img class="banner-01" src="uploads/<%=rs.getString(7)%>" alt="banner">
                         <h2><%=rs.getString(2)%></h2>
                         <div class="actions">
@@ -97,105 +97,6 @@
                         }
 
                     %>
-                    <div class="movie">
-                        <img class="banner-01" src="assets/Batman.jpg" alt="banner">
-                        <h2>The Batman</h2>
-                        <div class="actions">
-                            <h6>Tuesday</h6>
-                            <div class="icons">
-                                <a href="ADPremiere-edit.jsp"><i class="far fa-edit"></i></a>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie">
-                        <img class="banner-01" src="assets/after ever happy.jpg" alt="banner">
-                        <h2>After Ever Happy</h2>
-                        <div class="actions">
-                            <h6>Yesterday</h6>
-                            <div class="icons">
-                                <a href="ADPremiere-edit.jsp"><i class="far fa-edit"></i></a>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie">
-                        <img class="banner-01" src="assets/black adam.jpg" alt="banner">
-                        <h2>Black Adam</h2>
-                        <div class="actions">
-                            <h6>Yesterday</h6>
-                            <div class="icons">
-                                <a href="ADPremiere-edit.jsp"><i class="far fa-edit"></i></a>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie">
-                        <img class="banner-01" src="assets/smile.jpg" alt="banner">
-                        <h2>Smile</h2>
-                        <div class="actions">
-                            <h6>Yesterday</h6>
-                            <div class="icons">
-                                <a href="ADPremiere-edit.jsp"><i class="far fa-edit"></i></a>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie">
-                        <img class="banner-01" src="assets/babylon.jpg" alt="banner">
-                        <h2>Babylon</h2>
-                        <div class="actions">
-                            <h6>Yesterday</h6>
-                            <div class="icons">
-                                <a href="ADPremiere-edit.jsp"><i class="far fa-edit"></i></a>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie">
-                        <img class="banner-01" src="assets/Jurasic world.jpg" alt="banner">
-                        <h2>Jurasic World</h2>
-                        <div class="actions">
-                            <h6>Yesterday</h6>
-                            <div class="icons">
-                                <a href="ADPremiere-edit.jsp"><i class="far fa-edit"></i></a>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie">
-                        <img class="banner-01" src="assets/thor.jpg" alt="banner">
-                        <h2>Thor</h2>
-                        <div class="actions">
-                            <h6>Yesterday</h6>
-                            <div class="icons">
-                                <a href="ADPremiere-edit.jsp"><i class="far fa-edit"></i></a>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie">
-                        <img class="banner-01" src="assets/violent night.jpg" alt="banner">
-                        <h2>Violent Night</h2>
-                        <div class="actions">
-                            <h6>Yesterday</h6>
-                            <div class="icons">
-                                <a href="ADPremiere-edit.jsp"><i class="far fa-edit"></i></a>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie">
-                        <img class="banner-01" src="assets/dhokha.jpg" alt="banner">
-                        <h2>Dhokha</h2>
-                        <div class="actions">
-                            <h6>Yesterday</h6>
-                            <div class="icons">
-                                <a href="ADPremiere-edit.jsp"><i class="far fa-edit"></i></a>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

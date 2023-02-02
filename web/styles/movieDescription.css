@@ -40,6 +40,15 @@ body{
     margin: 62px 10% 0;
 }
 
+.options{
+    display: flex;
+    padding: 6px;
+}
+
+.options div{
+    padding: 6px;
+}
+
 .cta-btns{
     margin: 12px 10% 0;
 }

@@ -89,24 +89,6 @@
                             out.print(e);
                         }
                     %>
-                    <a href="movieDescription.jsp">
-                        <div class="movie">
-                            <img src="assets/bp.jpg" alt="">
-                            <h4>Movie Name</h4>
-                        </div>
-                    </a>
-                    <a href="movieDescription.jsp">
-                        <div class="movie">
-                            <img src="assets/tg.jpg" alt="">
-                            <h4>Movie Name</h4>
-                        </div>
-                    </a>
-                    <a href="movieDescription.jsp">
-                        <div class="movie">
-                            <img src="assets/Poster.png" alt="">
-                            <h4>Movie Name</h4>
-                        </div>
-                    </a>
                 </div>
             </div>
             <br>
@@ -139,24 +121,6 @@
                             out.print(e);
                         }
                     %>
-                    <a href="movieDescription.jsp">
-                        <div class="movie">
-                            <img src="assets/transformers.jpg" alt="">
-                            <h4>Movie Name</h4>
-                        </div>
-                    </a>
-                    <a href="movieDescription.jsp">
-                        <div class="movie">
-                            <img src="assets/avatar.jpg" alt="">
-                            <h4>Movie Name</h4>
-                        </div>
-                    </a>
-                    <a href="movieDescription.jsp">
-                        <div class="movie">
-                            <img src="assets/fx.webp" alt="">
-                            <h4>Movie Name</h4>
-                        </div>
-                    </a>
                 </div>
             </div>
             <br>

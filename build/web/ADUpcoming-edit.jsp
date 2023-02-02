@@ -47,7 +47,7 @@
           <li><a class="active" href="ADUpcoming.jsp">
               <p>Upcoming</p>
             </a></li>
-          <li><a href="#">
+          <li><a href="index.jsp">
               <p>Log-out</p>
             </a></li>
         </ul>

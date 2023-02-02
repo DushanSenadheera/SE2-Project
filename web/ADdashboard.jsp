@@ -1,3 +1,4 @@
+<%@page import="java.util.Arrays"%>
 <%@page import="org.json.JSONObject"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
@@ -15,14 +16,7 @@
         <%
             String user = (String) session.getAttribute("admin");
          
-            int value = 123;
-
-            JSONObject json = new JSONObject();
-            json.put("key", value);
-
-            String jsonString = json.toString();
-
-            request.setAttribute("jsonString", jsonString);
+            
 
             if (user == null) {
                 response.sendRedirect(request.getContextPath() + "/ADLogin.jsp");
@@ -56,14 +50,18 @@
                         <li><a href="ADUpcoming.jsp">
                                 <p>Upcoming</p>
                             </a></li>
-                        <li><a href="#">
+                        <li><a href="index.jsp">
                                 <p>Log-out</p>
                             </a></li>
                     </ul>
                 </menu>
             </div>
             <div class="details">
-                
+                <%
+                    int value = 41;
+
+                %>
+                <input type="hidden" id="data" value='<%= value %>'>
                 <div>
                     <canvas id="myChart"></canvas>
                 </div>

@@ -4,6 +4,9 @@
         "allow": {
             "context": "iframe"
         },
+        "+bronze+\"');\"": {
+            "context": "div"
+        },
         "value": {
             "context": "textarea"
         }

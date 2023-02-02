@@ -133,9 +133,9 @@ li a:hover:not(.active) {
 
 
 .details{
-    background-color: transparent;
-    width: 100%;
-    height: 100vh;
+    
+    width: 60%;
+    height: auto;
     margin-top: 140px;
     margin-left: 355px;
     margin-right: 50px;
@@ -207,6 +207,10 @@ h5{
     height: 60px;
     font-size: 60px;
     margin-bottom: 40px;
+}
+
+#myChart{
+    margin-left: 10%;
 }
 
 

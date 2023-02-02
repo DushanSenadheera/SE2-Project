@@ -57,7 +57,11 @@ if (user == null) {
                     </form>
                     <section>
                         <a href="editProfile.jsp"><input type="submit" value="Profile Settings" class="sign-in-btn"></a>
+                        <br> 
+                                                <br> 
+                        <a href="seatBookingHistory.jsp"><input type="submit" value="Seat Booking History" class="sign-in-btn"></a>
                         <br>
+                                                <br> 
                         <form action="deleteAccount" method="POST">
                             <input type="submit" value="Delete Account" class="del-acc-btn">
                         </form> 

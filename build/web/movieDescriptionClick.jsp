@@ -75,6 +75,26 @@
                     </div>
 
                     <div style="padding:20px">
+                        <div class="options">
+                            <div class="date">
+                                <label for="date">Date</label>
+                                <select name="date" id="date">
+                                    <option value="02 Jan">01 Feb</option>
+                                    <option value="03 Jan">02 Feb</option>
+                                    <option value="04 Jan">03 Feb</option>
+
+                                </select>
+                            </div>
+                            <div class="time">
+                                <label for="time">Time</label>
+                                <select name="time" id="time">
+                                    <option value="9.00 AM">9.00 AM</option>
+                                    <option value="2.00 PM">2.00 PM</option>
+                                    <option value="5.00 PM">5.00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                       
                         <input type="submit" value="Buy Ticket" class="btn-buy">
                         <input type="button" value="Watch Trailer" class="btn-trailer" onclick="on()">
                     </div>
@@ -92,33 +112,7 @@
             }
 
         %>
-<!--        <div class="premiering" id="explore">
-            <h3>Premiere Now</h3>
-            <div class="premiering-movies">
-                <a href="movieDescription.jsp">
-                    <div class="movie">
-                        <img src="assets/Poster.png" alt="">
-                        <h4>Movie Name</h4>
-                        <p>Movie Description</p>
-                    </div>
-                </a>
-                <div class="movie">
-                    <img src="assets/bp.jpg" alt="">
-                    <h4>Movie Name</h4>
-                    <p>Movie Description</p>
-                </div>
-                <div class="movie">
-                    <img src="assets/tg.jpg" alt="">
-                    <h4>Movie Name</h4>
-                    <p>Movie Description</p>
-                </div>
-                <div class="movie">
-                    <img src="assets/Poster.png" alt="">
-                    <h4>Movie Name</h4>
-                    <p>Movie Description</p>
-                </div>
-            </div>
-        </div>-->
+
         <jsp:include page="components/footer.jsp" />
         <script src="https://kit.fontawesome.com/56016c02ef.js" crossorigin="anonymous"></script>
         <script src="scripts/navbarToggler.js"></script> 
